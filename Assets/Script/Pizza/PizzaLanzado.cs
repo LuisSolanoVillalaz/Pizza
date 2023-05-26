@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PizzaLanzado : Pizza
 {
+    public TMPro.TextMeshProUGUI texto;
+    public int valor=1;
+    int puntos=0;
     Rigidbody body;
     void Start()
     {
@@ -19,6 +22,11 @@ public class PizzaLanzado : Pizza
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.name=="Horno"){
             Debug.Log("Point");
+            puntos+= valor;
+            texto.text=puntos.ToString();
+            body.velocity =Vector3.zero;
+            transform.position= new Vector3(-4.53f,1.35f,6.5f);
+            padre.cambiar(0);
         }
     }
 }
