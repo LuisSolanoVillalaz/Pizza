@@ -12,14 +12,14 @@ public class ArmInput
 
     //Serial port
     private static float[] valuesSerialPorts = new float[4];
-    private static SerialPort serialPort = new SerialPort("COM4", 9600);
-    //en función de Serial.begin(n); en el arduino
+    private static SerialPort serialPort = new SerialPort("COM3", 9600);
+    //en funciï¿½n de Serial.begin(n); en el arduino
 
-    //Señales para detectar las señales por flanco de subida y bajada
+    //Seï¿½ales para detectar las seï¿½ales por flanco de subida y bajada
     private static bool[] upSignals = new bool[4];
     private static bool[] downSignals = new bool[4];
 
-    //Cada señal es equivalente a un eje
+    //Cada seï¿½al es equivalente a un eje
     public enum Signal
     {
         S1, S2, S3, S4,
