@@ -14,7 +14,7 @@ public class Basura : MonoBehaviour
         
     }
     void Update() {
-        body.velocity=new Vector3(body.velocity.x,0,direction);
+        body.velocity=new Vector3(body.velocity.x,body.velocity.y,direction);
     }
     void OnBecameInvisible(){
         Destroy(gameObject);
