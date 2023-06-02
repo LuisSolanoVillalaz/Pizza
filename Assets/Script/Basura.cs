@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Basura : MonoBehaviour
 {
-     Rigidbody body;
+    Rigidbody body;
+    float direction;
     void Start()
     {
+
         body=GetComponent<Rigidbody>();
-        body.velocity=new Vector3(0,0,10);
+        direction=Random.Range(5f,10f)*Mathf.Sign(transform.position.z)*-1;
+        
+    }
+    void Update() {
+        body.velocity=new Vector3(body.velocity.x,0,direction);
+    }
+    void OnBecameInvisible(){
+        Destroy(gameObject);
     }
 }
