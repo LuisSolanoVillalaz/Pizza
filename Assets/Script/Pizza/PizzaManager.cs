@@ -19,7 +19,9 @@ public class PizzaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Activo.comportamiento();
+        if( Time.timeScale!=0){
+             Activo.comportamiento();
+        }
     }
 
     public void cambiar(int nuevo){
