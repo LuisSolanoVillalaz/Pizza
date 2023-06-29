@@ -3,7 +3,17 @@ guid: 0506a5c6bc8f8af4bac2fb18ad960f2f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base
+    second: {fileID: 2100000, guid: e36680464b229e941bf58e810121f26d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal horno
+    second: {fileID: 2100000, guid: e3c0ad99c6c05274584ead5806bb52df, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -36,7 +36,5 @@ public class CreadorBasura : MonoBehaviour
 
     int lugar(){
         return Random.Range(0,lugares.Length);
-        switch(Random.Range(0,100)){   
-        }
     }
 }

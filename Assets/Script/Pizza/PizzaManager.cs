@@ -6,7 +6,6 @@ public class PizzaManager : MonoBehaviour
 {
 
     public List<Pizza> scripts;
-
     Pizza Activo;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +29,8 @@ public class PizzaManager : MonoBehaviour
             Activo=scripts[nuevo];
             Activo.padre=this;
             Activo.enabled=true;
+        }else if(nuevo== 10){
+            Activo=null;
         }
     }
    

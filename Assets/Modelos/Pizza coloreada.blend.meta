@@ -3,7 +3,32 @@ guid: 03a2bfe7698e16444b3d11bfc391f647
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aceitunas moradas
+    second: {fileID: 2100000, guid: 01b50a1ce91921f408bd3428a05fb46a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base pizza amarillito
+    second: {fileID: 2100000, guid: 7c863e8a7956617479a7a41e81b123d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Borde pizza naranja
+    second: {fileID: 2100000, guid: baded6b64b21d664085b0370396f9f92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Champi\xF1ones"
+    second: {fileID: 2100000, guid: 777e971d78a01fb438ee6069934e8c20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pimiento naranja
+    second: {fileID: 2100000, guid: f8f224fcd85f19641b32485c3308719c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

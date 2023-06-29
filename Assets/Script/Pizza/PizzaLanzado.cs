@@ -10,33 +10,46 @@ public class PizzaLanzado : Pizza
     AudioSource source;
     public AudioClip score;
     public AudioClip hit;
+    public AudioClip lanzar;
+    float timer=0;
+    public CreadorPizza creador;
+    bool despawn=false;
+    bool canhit=true;
     void Start()
     {
         body=GetComponent<Rigidbody>();
-        source=GetComponent<AudioSource>();
-        source.PlayDelayed(0f);
+        source=GameObject.Find("Creador de Pizza").GetComponent<AudioSource>();
+        if(source)
+                source.PlayOneShot(lanzar);
+        uipuntos=GameObject.Find("Puntos").GetComponent<puntaje>();
 
     }
     public override void comportamiento(){
-        if(ArmInput.GetSignalLeftArm()==Vector2.zero&&ArmInput.GetSignalRightArm()== Vector2.right){  //Solo sube el derecho
-            body.velocity =Vector3.zero;
-            transform.position= new Vector3(-4.53f,1.35f,6.5f);
-            padre.cambiar(0);
+        if(despawn){
+            timer+=Time.deltaTime;
+            if(timer>=2f){
+                Destroy(gameObject);
+            }
         }
     }
     private void OnCollisionEnter(Collision other) {
-        if(source)
-            source.Stop();
-        if(other.gameObject.name=="Horno"){
+        if(canhit){
             if(source)
-                source.PlayOneShot(score);
-            uipuntos.cambiarpuntos(valor);
-            body.velocity =Vector3.zero;
-            transform.position= new Vector3(-4.53f,1.35f,6.5f);
-            padre.cambiar(0);
-        }else if(other.gameObject.name!="Cinta"){
-            if(source)
-                source.PlayOneShot(hit);
+                source.Stop();
+            if(other.gameObject.name=="Horno"){
+                if(source)
+                    source.PlayOneShot(score);
+                uipuntos.cambiarpuntos(valor);
+                creador.disponible=true;
+                Destroy(gameObject);
+                
+            }else if(other.gameObject.name!="Cinta"){
+                if(source)
+                    source.PlayOneShot(hit);
+                despawn=true;
+                creador.disponible=true;
+                canhit=false;
+            }
         }
     }
 }
