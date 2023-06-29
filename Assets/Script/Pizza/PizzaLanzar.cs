@@ -20,13 +20,7 @@ public class PizzaLanzar : Pizza
             timerR=0;
         }
 
-        if(ArmInput.GetSignalRightArm()== Vector2.right){
-            timerL+=Time.deltaTime;
-        }else{
-            timerL=0;
-        }
-
-        if(timerR>=timerLimit&&!(timerL>=timerLimit)){
+        if(timerR>=timerLimit&&!(timerR>=timerLimit*2)){
             body.velocity =direction;
             padre.cambiar(2);
         }
